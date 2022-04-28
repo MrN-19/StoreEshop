@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="no-js" dir="rtl" lang="fa-IR">
+	<head>
+		<meta charset="UTF-8">
+		<title> 
+            {% block title %}
+            {% endblock title %}
+        </title>
+		<base href="" >
+		<meta name="googlebot" content="index,follow">
+		<meta name="robots" content="noodp,noydir">
+		<meta name="apple-mobile-web-app-capable" content="yes" >
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% include "shared/HeaderRefrence.html" %}
+        {% block styles %}
+        {% endblock styles %}
+	</head>
+	<body>
+		{% include "shared/Header.html" %}
+
+        {% include "shared/Slider.html" %}
+        {% block body %}
+        {% endblock body %}
+        <div class="container margin-top-25">
+            <aside class="col-md-3 col-sm-4 right-side-content">
+                <!-- Basket -->
+                <section class="border-radius basket-side">
+                    <header><h3> سبد خرید شما  </h3></header>
+                    <article>
+                        <ul>
+                            <li>
+                                <img class="border-radius" src="img/1.jpg">
+                                <div class="left-basket">
+                                  <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <img class="border-radius" src="img/1.jpg">
+                                <div class="left-basket">
+                                  <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <img class="border-radius" src="img/1.jpg">
+                                <div class="left-basket">
+                                  <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="" class="show-basket-button border-radius">مشاهده سبد خرید</a>
+                    </article>
+                </section>
+                <!-- End Basket -->
+                <!-- compare -->
+                <section class="border-radius compare-side">
+                    <header><h3> لیست مقایسه </h3></header>
+                    <article>
+                        <ul>
+                            <li>
+                                <i class="delete-compare">X</i>
+                                <a href="">محصول شماره یک </a>
+                            </li>
+                            <li>
+                                <i class="delete-compare">X</i>
+                                <a href="">محصول شماره یک </a>
+                            </li>
+                            <li>
+                                <i class="delete-compare">X</i>
+                                <a href="">محصول شماره یک </a>
+                            </li>
+                        </ul>
+                        <a href="" class="show-compare-list border-radius">مشاهده لیست مقایسه</a>
+                    </article>
+                </section>
+                <!-- End compare -->
+                <!-- Category -->
+                <section class="border-radius category-side">
+                    <header><h3> دسته بندی ها </h3></header>
+                        <article>
+                            <ul class="category-menu">
+                                <li>
+                                   <h2><a href="">آموزش طراحی وب</a></h2>
+                                   <ul class="child-category-menu">
+                                        <li><h2><a href="">آموزش  html  مبتدی </a> <span>(10)</span></h2></li>
+                                        <li><h2><a href="">آموزش  html  پیشرفته </a> <span>(5)</span></h2></li>
+                                        <li><h2><a href="">آموزش  css مبتدی </a> <span>(2)</span></h2></li>
+                                        <li><h2><a href="">آموزش  css پیشرفته </a> <span>(52)</span></h2></li>
+                                        <li><h2><a href="">آموزش  jquery </a> <span>(20)</span></h2></li>
+                                        <li><h2><a href="">آموزش  وردپرس و طراحی  </a> <span>(15)</span></h2></li>
+                                   </ul>
+                                </li>
+                                <li>
+                                   <h2><a href="">آموزش طراحی وب</a></h2>
+                                   <ul class="child-category-menu">
+                                        <li><h2><a href="">آموزش  html  مبتدی </a> <span>(10)</span></h2></li>
+                                        <li><h2><a href="">آموزش  html  پیشرفته </a> <span>(5)</span></h2></li>
+                                        <li><h2><a href="">آموزش  css مبتدی </a> <span>(2)</span></h2></li>
+                                        <li><h2><a href="">آموزش  css پیشرفته </a> <span>(52)</span></h2></li>
+                                        <li><h2><a href="">آموزش  jquery </a> <span>(20)</span></h2></li>
+                                        <li><h2><a href="">آموزش  وردپرس و طراحی  </a> <span>(15)</span></h2></li>
+                                   </ul>
+                                </li>
+                                <li>
+                                   <h2><a href="">آموزش طراحی وب</a></h2>
+                                   <ul class="child-category-menu">
+                                        <li><h2><a href="">آموزش  html  مبتدی </a> <span>(10)</span></h2></li>
+                                        <li><h2><a href="">آموزش  html  پیشرفته </a> <span>(5)</span></h2></li>
+                                        <li><h2><a href="">آموزش  css مبتدی </a> <span>(2)</span></h2></li>
+                                        <li><h2><a href="">آموزش  css پیشرفته </a> <span>(52)</span></h2></li>
+                                   </ul>
+                                </li>
+                            </ul>
+                        </article>
+                </section>
+                <!-- End Category -->
+                <!-- Category -->
+               
+                <!-- End Category -->
+            </aside>
+            <div class="col-md-9 col-sm-8 left-side-content">
+
+
+                <section class="last-products">
+                    <header><h3> جدیدترین محصولات </h3> <a href=""> آرشیو </a></header>
+                    <article>
+                    
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                         <div class="clearfix"></div>
+                    </article>
+                </section>
+
+
+                <section class="last-products">
+                    <header><h3> پرفروش ترین محصولات </h3> <a href=""> آرشیو </a></header>
+                    <article>
+                    
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                        <div class="col-md-4 col-sm-6"> 
+                            <div class="border-radius">
+                               <span>
+                                  <img src="img/1.jpg">
+                               </span>
+                               <h2> عنوان محصول در این ناحیه قرار میگیرد </h2>
+                               <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                               <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                                  <label>90000  تومان</label>
+                               </span>
+                               <a href="" class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                                  <label><i class="fa fa-shopping-basket"></i></label>
+                               </a>
+                            </div>
+                         </div>
+
+                         <div class="clearfix"></div>
+                    </article>
+                </section>
+
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        {% include "shared/Footer.html" %}
+		{% include "shared/FooterRefrence.html" %}
+        {% block scripts %}
+        {% endblock scripts %}
+	</body>
+</html>
