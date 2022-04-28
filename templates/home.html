@@ -138,12 +138,15 @@
             <div class="col-md-4 col-sm-6">
                <div class="border-radius">
                   <span>
-                     <img src="{{i.product.image.url}}">
+                     <img src="{{product.product.image.url}}">
                   </span>
-                  <h2> {{i.product.name}} </h2>
+                  <h2> {{product.product.name}} </h2>
                   <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                  <h6>
+                     {{product.count}} فروش
+                  </h6>
                   <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
-                     <label>{{i..product.final_price}} {{currency}}</label>
+                     <label>{{product.product.final_price}} {{currency}}</label>
                   </span>
                   <a href=""
                      class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
