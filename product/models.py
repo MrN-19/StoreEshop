@@ -34,6 +34,7 @@ class ProductSize(models.Model):
     
     class Meta:
         verbose_name = "اندازه محصول"
+        verbose_name_plural = "ااندازه محصول"
 
 class Product(models.Model):
     name = models.CharField(max_length=200,verbose_name="نام محصول")
