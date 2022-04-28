@@ -13,7 +13,7 @@ class AppSetting(models.Model):
     
 class MoneyCurrency(models.Model):
     CURRENCY = (
-        ("toman","تومان"),("rial","ریال"),("dolor","دلار"),("euro","یورو")
+        ("تومان","تومان"),("ریال","ریال"),("دلار","دلار"),("یورو","یورو")
     )
     currency = models.CharField(max_length=200,verbose_name="واحد پول",choices=CURRENCY)
 

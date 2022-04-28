@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "product.apps.ProductConfig",
     "basket.apps.BasketConfig",
     "setting.apps.SettingConfig",
+    "ckeditor",
+    
 ]
 
 MIDDLEWARE = [
@@ -66,6 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "eshop.processor.site_logo",
+                "eshop.processor.get_currency",
             ],
         },
     },

@@ -1,4 +1,5 @@
 {% extends 'shared/base.html' %}
+{% load utilitytags %}
 {% block title %}
 فروشگاه لوازم دیجیتال
 {% endblock title %}
@@ -112,7 +113,7 @@
                   <h2> {{product.name}} </h2>
                   <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
                   <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
-                     <label>{{product.final_price}} {{currency}}</label>
+                     <label>{{product.final_price|toint}} {{currency}}</label>
                   </span>
                   <a href=""
                      class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
