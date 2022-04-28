@@ -1,0 +1,162 @@
+{% extends 'shared/base.html' %}
+{% block title %}
+فروشگاه لوازم دیجیتال
+{% endblock title %}
+
+{% block body %}
+<div class="container margin-top-25">
+   <aside class="col-md-3 col-sm-4 right-side-content">
+      <!-- Basket -->
+      <section class="border-radius basket-side">
+         <header>
+            <h3> سبد خرید شما </h3>
+         </header>
+         <article>
+            <ul>
+               <li>
+                  <img class="border-radius" src="img/1.jpg">
+                  <div class="left-basket">
+                     <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
+                  </div>
+               </li>
+               <li>
+                  <img class="border-radius" src="img/1.jpg">
+                  <div class="left-basket">
+                     <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
+                  </div>
+               </li>
+               <li>
+                  <img class="border-radius" src="img/1.jpg">
+                  <div class="left-basket">
+                     <a href="">محصول شماره یک <span class="border-radius"> 2 </span></a>
+                  </div>
+               </li>
+            </ul>
+            <a href="" class="show-basket-button border-radius">مشاهده سبد خرید</a>
+         </article>
+      </section>
+      <!-- End Basket -->
+      <!-- compare -->
+      <section class="border-radius compare-side">
+         <header>
+            <h3> لیست مقایسه </h3>
+         </header>
+         <article>
+            <ul>
+               <li>
+                  <i class="delete-compare">X</i>
+                  <a href="">محصول شماره یک </a>
+               </li>
+               <li>
+                  <i class="delete-compare">X</i>
+                  <a href="">محصول شماره یک </a>
+               </li>
+               <li>
+                  <i class="delete-compare">X</i>
+                  <a href="">محصول شماره یک </a>
+               </li>
+            </ul>
+            <a href="" class="show-compare-list border-radius">مشاهده لیست مقایسه</a>
+         </article>
+      </section>
+      <!-- End compare -->
+      <!-- Category -->
+      <section class="border-radius category-side">
+         <header>
+            <h3> دسته بندی ها </h3>
+         </header>
+         <article>
+            <ul class="category-menu">
+               {% for i in categories_header %}
+               <li>
+                  <h2><a href="">
+                        {{i.title}}
+                     </a></h2>
+                  {% if i.is_header %}
+                  {% for sub in categories %}
+                  {% if sub.header == i %}
+                  <ul>
+                     <li>
+                        <a href="">
+                           {{sub.title}}
+                        </a>
+                     </li>
+                  </ul>
+                  {% endif %}
+                  {% endfor %}
+                  {% endif %}
+               </li>
+               {% endfor %}
+            </ul>
+         </article>
+      </section>
+      <!-- End Category -->
+      <!-- Category -->
+
+      <!-- End Category -->
+   </aside>
+   <div class="col-md-9 col-sm-8 left-side-content">
+
+
+      <section class="last-products">
+         <header>
+            <h3> جدیدترین محصولات </h3> <a href=""> آرشیو </a>
+         </header>
+         <article>
+            {% for product in products %}
+            <div class="col-md-4 col-sm-6">
+               <div class="border-radius">
+                  <span>
+                     <img src="{{product.image.url}}">
+                  </span>
+                  <h2> {{product.name}} </h2>
+                  <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                  <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                     <label>{{product.final_price}} {{currency}}</label>
+                  </span>
+                  <a href=""
+                     class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                     <label><i class="fa fa-shopping-basket"></i></label>
+                  </a>
+               </div>
+            </div>
+            {% endfor %}
+
+
+            <div class="clearfix"></div>
+         </article>
+      </section>
+
+
+      <section class="last-products">
+         <header>
+            <h3> پرفروش ترین محصولات </h3> <a href=""> آرشیو </a>
+         </header>
+         <article>
+            {% for product in highest_products_bought %}
+            <div class="col-md-4 col-sm-6">
+               <div class="border-radius">
+                  <span>
+                     <img src="{{i.product.image.url}}">
+                  </span>
+                  <h2> {{i.product.name}} </h2>
+                  <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+                  <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+                     <label>{{i..product.final_price}} {{currency}}</label>
+                  </span>
+                  <a href=""
+                     class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+                     <label><i class="fa fa-shopping-basket"></i></label>
+                  </a>
+               </div>
+            </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+         </article>
+      </section>
+
+
+   </div>
+   <div class="clearfix"></div>
+</div>
+{% endblock body %}
