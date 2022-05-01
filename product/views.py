@@ -6,7 +6,8 @@ def get_product_by_category(request,slug):
     category = get_object_or_404(ProductCategory,slug = slug)
     products = get_list_or_404(Product,category = category)
     context = {
-        "products" : products
+        "products" : products,
+        "filtered" : 1
     }
     return render(request,"products/products.html",context)
 
