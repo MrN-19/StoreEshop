@@ -50,7 +50,7 @@ class Product(models.Model):
     size = models.ManyToManyField(ProductSize,verbose_name="اندازه",null=True,blank=True)
     is_active = models.BooleanField(default=False,verbose_name="وضیعت فعال بودن")
     image = models.ImageField(verbose_name="تصویر محصول",upload_to = "Product/Product",null=True)
-    slug = models.SlugField(verbose_name="اسلاگ",allow_unicode=True,unique=True)
+    slug = models.SlugField(verbose_name="اسلاگ",allow_unicode=True,unique=True,null=True)
     is_slider = models.BooleanField(default=False,verbose_name="آیا اسلایدر است ؟")
     def __str__(self):
         return self.name
