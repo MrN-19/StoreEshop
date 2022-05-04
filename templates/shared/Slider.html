@@ -1,12 +1,14 @@
 <!-- slider -->
+
 <div class="slider-layer">
     <div id="slider-one" class="owl-carousel">
+        {% for i in slider %}
         <div class="item">
-            <a href=""><img src="img/slider.jpg" title="تست عنوان"></a>
+            <a href=""><img src="{{i.image.url}}" title="{{i.name}}">
+            </a>
         </div>
-        <div class="item">
-            <a href=""><img src="img/slider.jpg" title="تست عنوان"></a>
-        </div>
+        {% endfor %}
     </div>
 </div> 
+
 <!-- End slider -->
