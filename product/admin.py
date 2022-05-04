@@ -6,6 +6,7 @@ class ProductTagInline(admin.TabularInline):
 
 class ProductAdmin(admin.ModelAdmin):
     inlines = (ProductTagInline,)
+    prepopulate_fields = ({"slug" : "name"},)
 
     
 admin.site.register(models.ProductCategory)
