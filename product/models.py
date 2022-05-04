@@ -8,7 +8,7 @@ class ProductCategory(models.Model):
     title = models.CharField(max_length=200,verbose_name="عنوان دسته بندی")
     is_header = models.BooleanField(default=False,verbose_name="آیا سر گروه است ؟")
     header = models.ForeignKey("self",on_delete=models.CASCADE,verbose_name="سر گروه",null=True,blank=True)
-    slug = models.SlugField(allow_unicode=True,unique=True)
+    slug = models.SlugField(allow_unicode=True,unique=True,null=True)
     def __str__(self):
         return self.title
     class Meta:
