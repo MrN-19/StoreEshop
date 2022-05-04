@@ -10,8 +10,8 @@ class ProductAdmin(admin.ModelAdmin):
 class ProductCategoryAdmin(admin.ModelAdmin):
     prepopulate_fields = ({"slug" : "title"})
     
-admin.site.register(models.ProductCategory)
-admin.site.register(models.Product,ProductAdmin,ProductCategoryAdmin)
+admin.site.register(models.ProductCategory,ProductCategoryAdmin)
+admin.site.register(models.Product,ProductAdmin)
 
 admin.site.register(models.ProductTags)
 admin.site.register(models.ProductColor)
