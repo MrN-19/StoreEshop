@@ -1,0 +1,31 @@
+<!-- Category -->
+<section class="border-radius category-side">
+    {% if allcategories and headers %}
+    <header>
+        <h3> دسته بندی ها </h3>
+    </header>
+    <article>
+        <ul class="category-menu">
+            {% for header in headers %}
+            <li>
+                <h2><a href="{% url 'product:getproductbycategory' header.slug %}">
+                    {{header.title}}
+                </a> <span>({{header.products.count}})</span> </h2>
+                <ul class="child-category-menu">
+                    {% for sub in allcategories %}
+                    {% if sub.header == header %}
+                    <li>
+                        <h2><a href="{% url 'product:getproductbycategory' sub.slug %}">
+                            {{sub.title}}
+                        </a> <span>({{sub.products.count}})</span></h2>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </article>
+    {% endif %}
+</section>
+<!-- End Category -->

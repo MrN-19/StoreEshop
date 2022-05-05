@@ -70,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 "eshop.processor.site_logo",
                 "eshop.processor.get_currency",
+                "eshop.processor.get_all_categories",
             ],
         },
     },
