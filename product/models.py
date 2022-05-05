@@ -38,7 +38,7 @@ class ProductSize(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200,verbose_name="نام محصول")
-    category = models.ManyToManyField(ProductCategory,verbose_name="دسته بندی")
+    category = models.ManyToManyField(ProductCategory,verbose_name="دسته بندی",related_name="products")
     short_describtion = models.CharField(max_length=500,verbose_name="توضیح کوتاه")
     descrbtion = RichTextField(verbose_name = "متن توضیح")
     publish_date = models.DateTimeField(verbose_name="تاریخ انتشار",auto_now=True)
