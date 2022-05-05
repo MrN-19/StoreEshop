@@ -70,7 +70,7 @@
             <ul class="category-menu">
                {% for i in categories_header %}
                <li>
-                  <h2><a href="">
+                  <h2><a href="{% url 'product:getproductbycategory' i.slug %}">
                         {{i.title}}
                      </a></h2>
                   {% if i.is_header %}
@@ -78,7 +78,7 @@
                   {% if sub.header == i %}
                   <ul>
                      <li>
-                        <a href="">
+                        <a href="{% url 'product:getproductbycategory' sub.slug %}">
                            {{sub.title}}
                         </a>
                      </li>
