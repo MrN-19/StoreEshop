@@ -1,35 +1,36 @@
 {% extends 'shared/base.html' %}
+{% load utilitytags %}
 {% block title %}
 {{title}}
 {% endblock %}
 {% block body %}
 <div class="col-md-9 col-sm-8 left-side-content">
     <section class="single-page">
-        <header><h3> عنوان محصول در این ناحیه قرار میگیرد  </h3> </header>
+        <header><h3> {{product.name}}  </h3> </header>
         <article>
             <!-- Detail -->
             <div class="col-md-8 col-sm-12 col-xs-12 pull-left detail-product">
                 <div>
-                    <span> قیمت : 35000 تومان </span>
+                    <span> قیمت : {{product.final_price|toint}} {{currency}} </span>
                     <a href="" class="add-to-card-link border-radius"> افزودن به سبد خرید </a>
                 </div>  
                 <p>
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. 
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. 
+                    {{product.short_describtion}}
                 </p>
             </div>
             <!-- End Detail -->
             <!-- Gallery -->
             <div class="col-md-4 col-sm-12 col-xs-12 pull-right product-gallery">
                 <div class="large-image border-radius">
-                    <img class="border-radius" src="img/1.jpg">
+                    <img class="border-radius" src="{{product.image.url}}">
                 </div>
                 <div class="thumbnails-image">
                     <div class="row">
-                        <div class="col-md-3 col-sm-3 col-xs-4 border-radius"><img class="border-radius" src="img/1.jpg"></div>
-                        <div class="col-md-3 col-sm-3 col-xs-4 border-radius"><img class="border-radius" src="img/2.jpg"></div>
-                        <div class="col-md-3 col-sm-3 col-xs-4 border-radius"><img class="border-radius" src="img/1.jpg"></div>
-                        <div class="col-md-3 col-sm-3 col-xs-4 border-radius"><img class="border-radius" src="img/2.jpg"></div>
+                        {% for gallery in galleries %}
+                        <div class="col-md-3 col-sm-3 col-xs-4 border-radius">
+                            <img class="border-radius" src="{{gallery.image.url}}">
+                        </div>
+                        {% endfor %}
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -51,34 +52,45 @@
 
             <!-- description -->
             <div id="main-content" class="tab-pane fade in active">
-                <h3> ویژگی های محصول : </h3>
-                <p>
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیستری را برای طراحان رایانه ای و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                </p>
-                <h3> ویژگی های محصول : </h3>
-                <p>
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیستری را برای طراحان رایانه ای و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                </p>
-                <ul>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                </ul>
+                {{product.descrbtion|safe}}
             </div>
             <!-- End description -->
 
             <!-- Chart -->
             <div id="properties" class="tab-pane fade">
                 <h3> ویژگی های محصول : </h3>
-
                 <ul>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                    <li> لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                    <li>
+                        رنگ :
+                       {% for i in specifics %}
+                       {{i.color.color_name}}
+                       {% endfor %}
+                    </li>
+                    <li>
+                        اندازه :
+                        {{productspecific.size.name}}
+                    </li>
+                    <li>
+                        برند
+                        {{productspecific.brand.name}}
+                        <span>---</span>
+                        {{productspecific.brand.country}}
+                    </li>
+                </ul>
+                <ul>
+                    {% for keyvalue in specifics.keyvalues.all %}
+                    <li> 
+                        <span>
+                            {{keyvalue.key}}
+                        </span>
+                        <span>
+                            :
+                        </span>
+                        <span>
+                            {{keyvalue.value}}
+                        </span>
+                    </li>
+                    {% endfor %}
                 </ul>
             </div>
             <!-- End Chart -->
@@ -188,12 +200,11 @@
     </div>
 
     <section class="border-radius tags-layer">
-        <a href="">کلمات کلیدی</a>
-        <a href="">کلمات کلیدی</a>
-        <a href="">کلمات کلیدی</a>
-        <a href="">کلمات کلیدی</a>
-        <a href="">کلمات کلیدی</a>
-        <a href="">کلمات کلیدی</a>
+        {% for i in tags %}
+        <a href="{% url 'product:getproductsbytag' i.tag_title %}">
+            {{i.tag_title}}
+        </a>
+        {% endfor %}
     </section>
 
 

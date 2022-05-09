@@ -95,6 +95,9 @@ class ProductGallery(models.Model):
         if self.title:
             return self.title
         return self.product.name
+    class Meta:
+        verbose_name = "گالری محصولات"
+        verbose_name_plural = "گالری محصولات"
 
 
 class BuyCount(models.Model):
@@ -105,4 +108,40 @@ class BuyCount(models.Model):
     class Meta:
         verbose_name = "تعداد خرید محصول"
         verbose_name_plural = "تعداد خرید محصول"
+
+
+
+class Brand(models.Model):
+    name = models.CharField(max_length=120,verbose_name="برند")
+    country = models.CharField(max_length=150,verbose_name="کشور")
+
+    def __str__(self):
+        return self.name + "----" + self.country
+    class Meta:
+        verbose_name = "برند"
+        verbose_name_plural = "برند"
+
+
+
+class ProductSpecific(models.Model):
+    color = models.ManyToManyField(ProductColor,verbose_name="رنگ",null=True,blank=True)
+    size = models.ManyToManyField(ProductSize,verbose_name="اندازه",null=True,blank=True)
+    brand = models.ForeignKey(Brand,on_delete=models.CASCADE,verbose_name="برند",null=True,blank=True)
+    product = models.ForeignKey(Product,verbose_name="محصول",on_delete=models.CASCADE)
+    def __str__(self):
+        return self.product.name
+
+    class Meta:
+        verbose_name = "ویژگی محصول"
+        verbose_name_plural = "ویژگی محصول"
+
+class KeyValue(models.Model):
+    key = models.CharField(max_length=300,verbose_name="عنوان")
+    value = models.CharField(max_length=300,verbose_name="مقدار")
+    specific = models.ForeignKey(ProductSpecific,on_delete=models.CASCADE,related_name="keyvalues")
+    def __str__(self):
+        return self.key + "---" + self.value
+    class Meta:
+        verbose_name = "مقادیر"
+        verbose_name_plural = "مقادیر"
     

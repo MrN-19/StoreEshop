@@ -15,9 +15,13 @@
       <div class="col-md-4 col-sm-6">
          <div class="border-radius">
             <span>
-               <img src="{{i.image.url}}">
+               <a href="{% url 'product:singleproduct' i.slug i.id %}">
+                  <img src="{{i.image.url}}">
+               </a>
             </span>
-            <h2> {{i.name}} </h2>
+            <a href="{% url 'product:singleproduct' i.slug i.id %}" class="text-decoration-none">
+               <h2> {{i.name}} </h2>
+            </a>
             <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
             <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
                <label>
@@ -46,9 +50,13 @@
       <div class="col-md-4 col-sm-6">
          <div class="border-radius">
             <span>
-               <img src="{{i.product.image.url}}">
+               <a href="{% url 'product:singleproduct' i.product.slug i.product.id %}">
+                  <img src="{{i.product.image.url}}" alt="Product Image">
+               </a>
             </span>
-            <h2> {{i.product.name}} </h2>
+            <a href="{% url 'product:singleproduct' i.product.slug i.product.id %}" class="text-decoration-none">
+               <h2> {{i.product.name}} </h2>
+            </a>
             <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
             <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
                <label>{{i.product.final_price|toint}} {{currency}}</label>

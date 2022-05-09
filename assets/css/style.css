@@ -24,7 +24,9 @@ body{
   background-color: #fff;
   overflow-x: hidden;
 }
-
+.text-decoration-none{
+  text-decoration: none !important;
+}
 /***********Default setting************/
 a,i,form button,.last-products article > div > div .buy-button{ outline: none;  text-decoration: none; -webkit-transition : all 0.2s linear 0s; -moz-transition : all 0.2s linear 0s; -ms-transition : all 0.2s linear 0s; -o-transition : all 0.2s linear 0s; transition : all 0.2s linear 0s}
 a:hover,a:active{text-decoration: none; color: #008DDE;outline: none;}
