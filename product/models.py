@@ -153,8 +153,8 @@ class ProductComment(models.Model):
     comment = models.TextField(verbose_name="متن نظر")
     is_active = models.BooleanField(default=True,verbose_name="وضیعت")
     is_header = models.BooleanField(default=True,verbose_name="آیا سر گروه است ؟")
-    header = models.ForeignKey("self",on_delete=models.CASCADE,verbose_name="سر گروه")
-    
+    header = models.ForeignKey("self",on_delete=models.CASCADE,verbose_name="سر گروه",null=True,blank=True)
+
     
     def __str__(self):
         return self.user.username
