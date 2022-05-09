@@ -1,6 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render,get_object_or_404,get_list_or_404
-from .models import KeyValue, ProductCategory,Product, ProductColor, ProductGallery, ProductSpecific, ProductTags
+from .models import KeyValue, ProductCategory,Product, ProductColor, ProductComment, ProductGallery, ProductSpecific, ProductTags
 from django.utils.encoding import uri_to_iri
 
 def get_product_by_category(request,slug):
@@ -18,6 +18,7 @@ def single_product(request,slug,id):
     product_galleries = ProductGallery.objects.filter(product = product)
     product_specifics = ProductSpecific.objects.filter(product = product)
     tags = ProductTags.objects.filter(product = product)
+    comments = ProductComment.objects.filter(product = product)
     #specifics
     # end specifics
     context = {
@@ -25,6 +26,7 @@ def single_product(request,slug,id):
         "galleries" : product_galleries,
         "specifics" : product_specifics,
         "tags" : tags,
+        "comments" : comments
     }
     return render(request,"products/singleproduct.html",context)
 

@@ -152,6 +152,9 @@ class ProductComment(models.Model):
     send_date = models.DateTimeField(auto_now=True,verbose_name="تاریخ ثبت")
     comment = models.TextField(verbose_name="متن نظر")
     is_active = models.BooleanField(default=True,verbose_name="وضیعت")
+    is_header = models.BooleanField(default=True,verbose_name="آیا سر گروه است ؟")
+    header = models.ForeignKey("self",on_delete=models.CASCADE,verbose_name="سر گروه")
+    
     
     def __str__(self):
         return self.user.username
