@@ -23,6 +23,6 @@ def search(request):
             messages.error(request,"نتیجه ای یافت نشد",extra_tags="error")
         context["products"] = producst_found
         context["count"] = producst_found.count()
-    return render(request,"products/search.html",context)
+    return render(request,"products/products.html",context)
 
 

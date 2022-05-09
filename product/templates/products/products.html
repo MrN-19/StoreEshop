@@ -5,31 +5,35 @@
 {% endblock %}
 {% block body %}
 <section class="last-products">
-    <header>
-       <h3> {{category}} </h3> <a href=""> آرشیو </a>
-    </header>
-    <article>
-       {% for i in products %}
-       <div class="col-md-4 col-sm-6">
-          <div class="border-radius">
-             <span>
-                <img src="{{i.image.url}}">
-             </span>
-             <h2> {{i.name}} </h2>
-             <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
-             <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
-                <label>
-                   {{i.final_price|toint}} {{currency}}
-                </label>
-             </span>
-             <a href=""
-                class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
-                <label><i class="fa fa-shopping-basket"></i></label>
-             </a>
-          </div>
-       </div>
-       {% endfor %}
-       <div class="clearfix"></div>
-    </article>
- </section>
+   <header>
+      <h3> {% if count %}
+         {{count}} محصول یافت شد
+         {% endif %}</a>
+   </header>
+   <br />
+   <br />
+   <article>
+      {% for i in products %}
+      <div class="col-md-4 col-sm-6">
+         <div class="border-radius">
+            <span>
+               <img src="{{i.image.url}}">
+            </span>
+            <h2> {{i.name}} </h2>
+            <h6>افزودن به لیست مقایسه <input type="checkbox"></h6>
+            <span class="col-md-9 col-sm-9 col-xs-9 price-layer">
+               <label>
+                  {{i.final_price|toint}} {{currency}}
+               </label>
+            </span>
+            <a href=""
+               class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 buy-button border-radius">
+               <label><i class="fa fa-shopping-basket"></i></label>
+            </a>
+         </div>
+      </div>
+      {% endfor %}
+      <div class="clearfix"></div>
+   </article>
+</section>
 {% endblock %}
