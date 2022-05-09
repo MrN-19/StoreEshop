@@ -3,6 +3,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.core.validators import MaxValueValidator
 from utilities.utility import Calculator
+from django.contrib.auth.models import User
 
 class ProductCategory(models.Model):
     title = models.CharField(max_length=200,verbose_name="عنوان دسته بندی")
@@ -145,3 +146,16 @@ class KeyValue(models.Model):
         verbose_name = "مقادیر"
         verbose_name_plural = "مقادیر"
     
+class ProductComment(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE,verbose_name="کاربر مورد نظر")
+    product = models.ForeignKey(Product,on_delete=models.CASCADE,verbose_name="محصول مورد نظر")
+    send_date = models.DateTimeField(auto_now=True,verbose_name="تاریخ ثبت")
+    comment = models.TextField(verbose_name="متن نظر")
+    is_active = models.BooleanField(default=True,verbose_name="وضیعت")
+    
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        verbose_name = "نظرات محصول"
+        verbose_name_plural = "نظرات محصول"
