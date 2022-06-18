@@ -8,10 +8,11 @@ class ProductGalleryInline(admin.TabularInline):
 
 class KeyValueInline(admin.TabularInline):
     model = models.KeyValue
-
+class ProductCommentInline(admin.TabularInline):
+    model = models.ProductComment
 
 class ProductAdmin(admin.ModelAdmin):
-    inlines = (ProductTagInline,ProductGalleryInline)
+    inlines = (ProductTagInline,ProductGalleryInline,ProductCommentInline)
     prepopulated_fields = {"slug" : ("name",)}
 class ProductCategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug" : ("title",)}
@@ -29,3 +30,4 @@ admin.site.register(models.Brand)
 admin.site.register(models.BuyCount)
 admin.site.register(models.KeyValue)
 admin.site.register(models.ProductSpecific,ProductSpecificAdmin)
+admin.site.register(models.ProductComment)
