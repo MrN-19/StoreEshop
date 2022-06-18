@@ -1,12 +1,14 @@
 from django.utils.deprecation import MiddlewareMixin
 from django.http import Http404
-class AdminUrlBlocker(MiddlewareMixin):
+
+class AdminPanelBlock(MiddlewareMixin):
     def process_request(self,request):
-        if request.path.startswith("/admin") or request.path.startswith(""):
+        if request.path.startswith("/admin"):
             user = request.user
-            if not user.is_authenticated:
-                raise Http404("you dont have access to this page")
-            if not user.is_staff or not user.is_superuser:
-                raise Http404("you dont have access to this page")
-            return None
-            
+            if user.is_authenticated:
+                if not user.is_staff:
+                    # raise Http404()
+                    pass
+                return None
+            # raise Http404()
+        return None
