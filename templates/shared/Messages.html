@@ -1,0 +1,11 @@
+{% if messages %}
+{% for i in messages %}
+<script>
+    iziToast.success({
+        message: "{{i}}",
+        position: 'bottomRight',
+        timeout: 2000,
+    });
+</script>
+{% endfor %}
+{% endif %}
