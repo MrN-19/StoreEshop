@@ -14,7 +14,8 @@
             <div class="col-md-8 col-sm-12 col-xs-12 pull-left detail-product">
                 <div>
                     <span> قیمت : {{product.final_price|toint}} {{currency}} </span>
-                    <a href="" class="add-to-card-link border-radius"> افزودن به سبد خرید </a>
+                    <input type="hidden" value="{{product.id}}" id="productid">
+                    <button id="set_basket" class="add-to-card-link border-radius" style="border: none;"> افزودن به سبد خرید </button>
                 </div>
                 <p>
                     {{product.short_describtion}}

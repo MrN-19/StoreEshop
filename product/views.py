@@ -69,3 +69,4 @@ def set_comment(request):
                 )
             return redirect("/product/{0}/{1}?success=yes".format(product.slug,product.id))
     return redirect(http_referer)
+
